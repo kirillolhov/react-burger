@@ -3,27 +3,60 @@ import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components/d
 import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components/dist/ui/icons'
 import { ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components/dist/ui/icons'
 import styles from './app-header.module.css'
+import PropTypes from 'prop-types'
 
 function AppHeader(props) {
   return (
-    <header
-      style={{ backgroundColor: '#000000', color: 'white' }}
-      className="p-1"
-    >
-      <BurgerIcon type="primary">
-        <p className="text text_type_main-default panel-item">Конструктор</p>
-      </BurgerIcon>
+    <div className="main-container">
+      <header className="p-1">
+        <div className="left-container">
+          <div className="burger-icon">
+            <a>
+              <div className="icon-with-text">
+                <BurgerIcon type="primary" />
+                <p className="text text_type_main-default panel-item">
+                  Конструктор
+                </p>
+              </div>
+            </a>
+          </div>
 
-      <ListIcon type="secondary">
-        <p className="text text_type_main-default">Лента заказов</p>
-      </ListIcon>
+          <div>
+            <a>
+              <div className="icon-with-text">
+                <ListIcon type="secondary" />
+                <p className="text text_type_main-default">Лента заказов</p>
+              </div>
+            </a>
+          </div>
+        </div>
 
-      <Logo />
+        <div className="central-container">
+          <div className="logo-container">
+            <a>
+              <Logo />
+            </a>
+          </div>
+        </div>
 
-      <ProfileIcon type="secondary" />
-      <p className="text text_type_main-default">Личный кабинет</p>
-    </header>
+        <div className="right-container">
+          <div className="profile">
+            <a>
+              <div className="icon-with-text">
+                <ProfileIcon type="secondary" />
+                <p className="text text_type_main-default">Личный кабинет</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </header>
+    </div>
   )
+
+  AppHeader.propTypes = {
+    className: PropTypes.string,
+    type: PropTypes.string,
+  }
 }
 
 export default AppHeader

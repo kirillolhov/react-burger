@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c21;
+  color: #fff;
+  padding: 10px;
+}
+
+.left-container {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  flex-basis: 35%;
+}
+
+.central-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.right-container {
+  display: flex;
+  flex-basis: 35%;
+  justify-content: flex-end;
+}
+
+.burger-icon {
+}
+
+.icon-with-text {
+  display: flex; /* Ensure icon and text are in a row */
+  align-items: center; /* Vertically align icon and text */
+  margin-right: 10px; /* Add spacing between icons and text */
+}
