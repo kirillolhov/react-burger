@@ -4,21 +4,25 @@ import {
   DeleteIcon,
   Counter,
   ConstructorElement,
+  Button,
 } from '@ya.praktikum/react-developer-burger-ui-components'
+import styles from './burger-constructor.module.css'
 
-function BurgerConstructor() {
+const BurgerConstructor = (props) => {
+  const { data } = props
+  console.log(data.data[0]._id)
+  const dataArray = Object.values(data)
+  console.log(dataArray)
+
   return (
-    <div>
-      <CurrencyIcon type="primary" />
-      <LockIcon type="secondary" />
-      <DeleteIcon type="primary" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
-      <Counter count={1} size="default" extraClass="m-1" />
+    <div className={styles.mainContainer}>
+      <ul>
+        {dataArray.map((item) => (
+          <li key={data.data._id}>
+            <ConstructorElement data={data.data.name}></ConstructorElement>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

@@ -1,4 +1,10 @@
-import { Counter } from '@ya.praktikum/react-developer-burger-ui-components'
+import {
+  Counter,
+  Tab,
+  CurrencyIcon,
+} from '@ya.praktikum/react-developer-burger-ui-components'
+
+import styles from './burger-ingredients.module.css'
 
 function BurgerIngredients(props) {
   return (
